@@ -44,6 +44,22 @@ class _MyCustomFormState extends State<MyCustomForm> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          return showDialog(context: context,
+          
+           builder: (context){
+             return AlertDialog()
+
+
+           }
+          
+          
+          );
+        },
+        tooltip: 'appuyez pour tester',
+        child: Icon(Icons.text_fields),
+      ),
     );
   }
 }
