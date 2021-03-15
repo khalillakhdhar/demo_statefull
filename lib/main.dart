@@ -50,7 +50,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  content: Text("bienvenu " + myController.text),
+                  content: Text("votre ages est " + myController.text),
                 );
               });
         },
