@@ -6,7 +6,7 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "testez votre age",
+      title: "lecture",
       home: MyCustomForm(),
     );
   }
@@ -31,8 +31,19 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     // Fill this out in the next step.
-    return Scaffold(appBar: AppBar(title: Text('lecture de valeur'),
-    ),
-    )
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('lecture de valeur'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          controller: myController,
+          decoration: const InputDecoration(
+            hintText: 'votre texte ici',
+          ),
+        ),
+      ),
+    );
   }
 }
