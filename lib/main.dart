@@ -40,7 +40,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         child: TextField(
           controller: myController,
           decoration: const InputDecoration(
-            hintText: 'votre texte ici',
+            hintText: 'votre age ici',
           ),
         ),
       ),
@@ -50,7 +50,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  content: Text("votre ages est " + myController.text),
+                  content: Text(evaluation()),
                 );
               });
         },
@@ -61,9 +61,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 
   String evaluation() {
-    if (int.parse(myController.text) < 18)
-      return "mineur";
+    int age = 0;
+    String message = "votre ages est " + myController.text + "vous êtes ";
+    try {
+      age = int.parse(myController.text);
+    } catch (exp) {
+      return "veuillez saisir un entier";
+    }
+    if (age < 18)
+      return message + " mineur";
     else
-      return "majeur";
+      return message + " majeur";
   }
 }
