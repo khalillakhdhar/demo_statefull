@@ -46,20 +46,24 @@ class _MyCustomFormState extends State<MyCustomForm> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          return showDialog(context: context,
-          
-           builder: (context){
-             return AlertDialog()
-
-
-           }
-          
-          
-          );
+          return showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text("bienvenu " + myController.text),
+                );
+              });
         },
         tooltip: 'appuyez pour tester',
         child: Icon(Icons.text_fields),
       ),
     );
+  }
+
+  String evaluation() {
+    if (int.parse(myController.text) < 18)
+      return "mineur";
+    else
+      return "majeur";
   }
 }
